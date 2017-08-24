@@ -1,0 +1,35 @@
+{
+  "name": "serverless-nuxt",
+  "version": "1.0.0",
+  "description": "Nuxt.js with Serverless",
+  "author": "",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build && backpack build" ,
+    "start": "nuxt build && backpack build && serverless offline start",
+    "generate": "nuxt generate",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "aws-serverless-express": "^3.0.2",
+    "compression": "^1.7.0",
+    "express": "^4.15.4",
+    "nuxt": "^1.0.0-rc3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "backpack-core": "^0.4.2",
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-html": "^3.1.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "serverless": "^1.20.2",
+    "serverless-offline": "^3.15.3"
+  }
+}
