@@ -79,20 +79,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var app = __WEBPACK_IMPORTED_MODULE_1_express___default()();
-//const compression = require('compression')
+var compression = __webpack_require__(3);
 
 app.disable('x-powered-by');
-//app.use(compression())
+app.use(compression());
 
 // Nuxt.js をオプションとともにインスタンス化する
-var config = __webpack_require__(3);
+var config = __webpack_require__(4);
 config.dev = false;
 var nuxt = new __WEBPACK_IMPORTED_MODULE_0_nuxt__["Nuxt"](config);
 
 // すべてのルートを Nuxt.js でレンダリングする
 app.use(nuxt.render);
 
-//module.exports = app
 /* harmony default export */ __webpack_exports__["default"] = (app);
 
 /***/ }),
@@ -109,6 +108,12 @@ module.exports = require("express");
 
 /***/ }),
 /* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("compression");
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports) {
 
 module.exports = {

@@ -27,5 +27,5 @@ const app = require('./build/main.js').default
 //const server = awsServerlessExpress.createServer(app, null, binaryMimeTypes)
 
 const server = awsServerlessExpress.createServer(app)
-exports.handler = (event, context) => awsServerlessExpress.proxy(server, event, context) 
+module.exports.handler = (event, context) => awsServerlessExpress.proxy(server, event, context) 
 
