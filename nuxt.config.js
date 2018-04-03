@@ -1,41 +1,57 @@
+const parseArgs = require("minimist");
+const argv = parseArgs(process.argv.slice(2), {
+  alias: {
+    H: "hostname",
+    p: "port"
+  },
+  string: ["H"],
+  unknown: parameter => false
+});
+
+const port =
+  argv.port ||
+  process.env.PORT ||
+  process.env.npm_package_config_nuxt_port ||
+  "3000";
+const host =
+  argv.hostname ||
+  process.env.HOST ||
+  process.env.npm_package_config_nuxt_host ||
+  "localhost";
 module.exports = {
-  /*
-  ** Headers of the page
-  */
+  env: {
+    baseUrl: process.env.BASE_URL || `http://${host}:${port}`
+  },
   head: {
-    title: 'serverless-nuxt',
+    title: "serverless-nuxt",
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
+      { charset: "utf-8" },
+      {
+        name: "viewport",
+        content: "width=device-width, initial-scale=1"
+      },
+      {
+        hid: "description",
+        name: "description",
+        content: "Nuxt.js project"
+      }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico"
+      }
     ]
-  },
-  performance: {
-    gzip: false 
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#3B8070' },
+  loading: { color: "#3B8070" },
   /*
   ** Build configuration
   */
-  build: {
-    /*
-    ** Run ESLINT on save
-    */
-    extend (config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  }
-}
+  build: {},
+  modules: ["~/modules/typescript.js"],
+  axios: {}
+};

@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build && backpack build" ,
+    "build": "nuxt build && backpack build",
     "start": "nuxt build && backpack build && serverless offline start",
     "deploy": "nuxt build && backpack build && serverless deploy",
     "generate": "nuxt generate",
@@ -17,9 +17,11 @@
     "aws-serverless-express": "^3.0.2",
     "compression": "^1.7.0",
     "express": "^4.15.4",
-    "nuxt": "^1.0.0-rc3"
+    "nuxt": "^1.4.0",
+    "vuex-class": "^0.3.0"
   },
   "devDependencies": {
+    "@types/node": "^9.6.1",
     "babel-eslint": "^7.2.3",
     "backpack-core": "^0.4.2",
     "eslint": "^4.3.0",
@@ -30,7 +32,10 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "nuxt-property-decorator": "^1.0.0",
     "serverless": "^1.20.2",
-    "serverless-offline": "^3.15.3"
+    "serverless-offline": "^3.15.3",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.8.1"
   }
 }
