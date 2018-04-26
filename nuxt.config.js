@@ -53,5 +53,8 @@ module.exports = {
   */
   build: {},
   modules: ["~/modules/typescript.js"],
-  axios: {}
+  axios: {},
+  render: {
+    gzip: false
+  }
 };
