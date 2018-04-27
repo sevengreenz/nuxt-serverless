@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "outDir": "./dist",
+    // SEE: http://blog.yux3.net/entry/2017/02/05/000805#error-TS1192-Module-hoge-has-no-default-export-や-error-TS2305-Module-hoge-has-no-exported-member-_-など
+    // 到達しえないコードがあるとエラー
+    "allowUnreachableCode": false,
+    // 到達しえないラベルがあるとエラー
+    "allowUnusedLabels": false,
+    // use strict; が自動でつく(module ならば勝手につくけど)
+    "alwaysStrict": true,
+    // 暗黙的な any があるとエラー
+    "noImplicitAny": true,
+    // 暗黙的な undefined の返却があるとエラー
+    "noImplicitReturns": true,
+    // this に型を明示しないとエラー
+    "noImplicitThis": true,
+    // 使っていないローカル変数があるとエラー
+    "noUnusedLocals": true,
+    // 使っていない引数があるとエラー
+    // "noUnusedParameters": true,
+    // デフォルトで non-nullableになるので null チェック必須に
+    "strictNullChecks": true,
+    // "allowSyntheticDefaultImports": true,
+    // sourceMap ファイルを生成"
+    "sourceMap": true,
+    "lib": ["esnext", "dom"],
+    "typeRoots": ["../node_modules/@types"]
+  },
+  "include": ["index.ts"]
+}
